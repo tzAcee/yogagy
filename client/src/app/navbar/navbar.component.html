@@ -1,0 +1,42 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menü</mat-toolbar>
+    <hr>
+    <mat-nav-list >
+      <a mat-list-item [routerLink]="['/day', 1]">Tag 1</a>
+      <a mat-list-item [routerLink]="['/day', 2]">Tag 2</a>
+      <a mat-list-item [routerLink]="['/day', 3]">Tag 3</a>
+      <a mat-list-item [routerLink]="['/day', 4]">Tag 4</a>
+      <a mat-list-item [routerLink]="['/day', 5]">Tag 5</a>
+      <mat-list-item>
+        <input style="width: 90%;" placeholder="Suche nach Tag" mat-input type="text">
+      </mat-list-item>
+      <mat-list-item [routerLink]="['dash']" style="margin-top: 280%">
+        <mat-icon color="primary" style="margin-left: 40%;">home</mat-icon>
+      </mat-list-item>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span><mat-icon style="margin-right: 10%;">accessibility_new</mat-icon>Yogagy</span>
+      <span style="margin: 0 auto;"><app-admin-buttons></app-admin-buttons></span>
+      <span style="margin: 0 auto;">{{get_date()}}</span>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

@@ -1,0 +1,40 @@
+<h2 mat-dialog-title>Neues Video hochladen</h2>
+
+<mat-dialog-content [formGroup]="form">
+    <mat-label>Für wann hochladen?</mat-label>
+    <mat-radio-group formControlName="upload_for">
+        <mat-radio-button style="margin: 2%;" [value]="0">Heute</mat-radio-button>
+        <mat-radio-button style="margin: 2%;" [value]="1">Morgen</mat-radio-button>
+        <mat-radio-button style="margin: 2%;" [value]="2">Übermorgen</mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field>
+        <textarea matInput        placeholder="Beschreibung des heutigen Tages"
+        formControlName="description" style="padding: 0.3%" rows="5" required></textarea>
+        </mat-form-field>
+</mat-dialog-content>
+<mat-label style="margin-top: 5%; margin-bottom: 5%;">Upload Videos (*.mp4)</mat-label><br>
+<input
+type="file"
+#file
+
+(change)="onFilesAdded()"
+  multiple
+  />
+      <mat-list>
+          <mat-list-item *ngFor="let file of files">
+              <h4 mat-line>{{file.name}}</h4>
+              <mat-progress-bar
+              *ngIf="progress"
+              mode="determinate"
+              [value]="progress[file.name].progress | async"
+              ></mat-progress-bar>
+          </mat-list-item>
+          </mat-list>
+
+
+
+<mat-dialog-actions>
+    <button class="mat-raised-button"(click)="close()">Close</button>
+    <button class="mat-raised-button mat-primary"(click)="save()">Save</button>
+</mat-dialog-actions>

@@ -1,0 +1,33 @@
+<div class="container">
+    <mat-tab-group>
+        <mat-tab label="Video 1"> 
+            <vg-player style="margin: 0 auto; width: 70%; height: 100%">
+                <video [vgMedia]="media" #media id="singleVideo" preload="auto" controls>
+                    <source src="http://static.videogular.com/assets/videos/videogular.mp4" type="video/mp4">
+                </video>
+            </vg-player>
+        </mat-tab>
+        <mat-tab label="Video 2"> 
+            <vg-player style="margin: 0 auto; width: 70%; height: 100%">
+                <video [vgMedia]="media" #media id="singleVideo" preload="auto" controls>
+                    <source src="http://static.videogular.com/assets/videos/videogular.mp4" type="video/mp4">
+                </video>
+            </vg-player> </mat-tab>
+</mat-tab-group>
+
+<div class="text"><h1 ><b>Tag {{id}}</b><h3 style="margin-left: 95%;">12.08.2020</h3></h1> 
+    <hr class="line">
+
+<p class="content"> BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG BESCHREIBUNG 
+</p>
+</div>
+
+<mat-card class="commentsection">
+        <mat-label style="margin-bottom: 1%;">Verfasse doch einen Kommentar</mat-label>
+        <mat-form-field>
+        <textarea matInput placeholder="Kommentar" style="padding: 0.3%" rows="5" required></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="accent">Kommentieren</button>
+</mat-card>
+
+</div>

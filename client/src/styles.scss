@@ -1,0 +1,22 @@
+
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+// For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$yogagy-primary: mat-palette($mat-teal);
+$yogagy-accent: mat-palette($mat-teal, 100, 200);
+
+// The warn palette is optional (defaults to red).
+$yogagy-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$yogagy-theme: mat-light-theme($yogagy-primary, $yogagy-accent, $yogagy-warn);
+
+@include angular-material-theme($yogagy-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
